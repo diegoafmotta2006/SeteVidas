@@ -1,6 +1,7 @@
 node_modules/
 dist/
 preview.log
+dev.log
 *.local
 .DS_Store
 Thumbs.db
