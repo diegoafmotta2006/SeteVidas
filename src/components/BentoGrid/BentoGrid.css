@@ -1,0 +1,10 @@
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(58px, 15.5vw, 84px);
+  /* dense = o navegador preenche buracos com os cards menores. */
+  grid-auto-flow: row dense;
+  gap: var(--grid-gap);
+  padding: 4px var(--page-padding)
+    calc(env(safe-area-inset-bottom) + 28px);
+}

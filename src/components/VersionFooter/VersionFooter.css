@@ -1,0 +1,14 @@
+.version-footer {
+  position: fixed;
+  left: var(--page-padding);
+  bottom: calc(env(safe-area-inset-bottom) + 6px);
+  z-index: 20;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  opacity: 0.4;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

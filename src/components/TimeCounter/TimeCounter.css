@@ -1,0 +1,26 @@
+.time-counter {
+  flex: 0 0 auto;
+  padding: calc(env(safe-area-inset-top) + 14px) var(--page-padding) 10px;
+  text-align: center;
+  color: var(--color-text);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.time-counter__calendar {
+  margin: 0;
+  font-size: clamp(15px, 4.4vw, 19px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.time-counter__clock {
+  margin: 4px 0 0;
+  font-size: clamp(12px, 3.4vw, 14px);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  opacity: 0.6;
+}

@@ -1,0 +1,93 @@
+.media-card {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background-color: var(--color-card);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  isolation: isolate;
+  transition:
+    transform 150ms ease-out,
+    box-shadow 150ms ease-out;
+}
+
+.media-card__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Evita "esticar" a imagem: corta o excesso, sem distorcer. */
+  object-position: center;
+}
+
+/* ---- Estado vazio: apenas um card cinza-escuro ---- */
+.media-card--empty {
+  box-shadow: none;
+  background-color: #141417;
+}
+
+.media-card__placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    160deg,
+    #1b1b1f 0%,
+    #131316 100%
+  );
+}
+
+/* ---- Selo de duração (somente vídeo) ---- */
+.media-card__duration {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 6px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+/* ---- Botão de três pontinhos ---- */
+.media-card__menu-button {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: rgba(18, 18, 21, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition:
+    transform 150ms ease-out,
+    background-color 150ms ease-out;
+}
+
+.media-card__menu-button:hover {
+  background-color: rgba(34, 34, 38, 0.92);
+}
+
+.media-card__menu-button:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-card,
+  .media-card__menu-button {
+    transition: none;
+  }
+}
