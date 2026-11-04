@@ -1,0 +1,45 @@
+.bento-grid {
+  padding: 4px var(--page-padding)
+    calc(env(safe-area-inset-bottom) + 28px);
+}
+
+/* ---- Galeria com mídias: cada card tem a proporção da própria foto ----
+   Colunas em vez de grid fixo: os cards mantêm a proporção natural e a
+   coluna se ajusta à altura, sem recortar nem deixar buracos. */
+.bento-grid--filled {
+  display: block;
+  columns: 3;
+  column-gap: var(--grid-gap);
+}
+
+.bento-grid--filled .media-card {
+  width: 100%;
+  margin: 0 0 var(--grid-gap);
+  break-inside: avoid;
+}
+
+/* ---- Galeria vazia: mantém o desenho bento original ---- */
+.bento-grid--empty {
+  display: grid;
+  /* Celular e tablet com o app em coluna: exatamente 3 colunas,
+     igual ao desenho original. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* A altura da linha acompanha a largura do container (cqw). */
+  grid-auto-rows: clamp(56px, 15cqw, 72px);
+  /* dense = o navegador preenche buracos com os cards menores. */
+  grid-auto-flow: row dense;
+  gap: var(--grid-gap);
+}
+
+/* Só quando o app realmente ocupa a tela larga (desktop) a galeria ganha
+   colunas extras em vez de esticar cards. */
+@container (min-width: 700px) {
+  .bento-grid--empty {
+    grid-template-columns: repeat(auto-fill, minmax(89px, 1fr));
+  }
+
+  .bento-grid--filled {
+    columns: auto;
+    column-width: 100px;
+  }
+}

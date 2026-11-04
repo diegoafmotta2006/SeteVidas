@@ -1,0 +1,65 @@
+.start-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  /* Fundo branco puro, como a tela de boot do iPhone. */
+  background-color: #ffffff;
+  color-scheme: light;
+  overflow: hidden;
+}
+
+/* O próprio ícone é o botão: sem borda, sem fundo, sem texto. */
+.start-screen__cat-button {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 0;
+  border-radius: 28px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 140ms ease-out;
+}
+
+/* Leve redução ao tocar (e só isso). */
+.start-screen__cat-button:active {
+  transform: scale(0.93);
+}
+
+.start-screen__cat-button:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 2px;
+}
+
+.start-screen__cat {
+  display: block;
+  /* Cerca de 34% da largura da tela, com teto de 150px. */
+  width: min(34vw, 150px);
+  height: auto;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  animation: start-screen-cat-fade-in 650ms ease-out both;
+}
+
+@keyframes start-screen-cat-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-screen__cat-button {
+    transition: none;
+  }
+
+  .start-screen__cat {
+    animation: none;
+  }
+}

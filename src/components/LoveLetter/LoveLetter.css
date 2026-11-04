@@ -1,0 +1,57 @@
+/* Carta exibida no final da galeria. */
+.love-letter {
+  padding: 0 var(--page-padding) calc(env(safe-area-inset-bottom) + 28px);
+}
+
+.love-letter__card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 26px 0 46px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.love-letter__paragraph {
+  margin: 0 0 1.1em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(244, 244, 245, 0.88);
+  /* Mantém as quebras de linha escritas no texto da carta. */
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+
+.love-letter__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.love-letter__paragraph--opening {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: var(--color-text);
+}
+
+/* No PC a carta se ajusta sozinha, igual ao grid de fotos: mesmo
+   gatilho (container de 700px) e só quando a tela é larga. Sem
+   limite de largura (preenche a tela) e fonte maior — no celular
+   (container < 700px) nada muda. */
+@container (min-width: 700px) {
+  .love-letter__card {
+    max-width: none;
+    padding: 34px 0 60px;
+  }
+
+  .love-letter__paragraph {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .love-letter__paragraph--opening {
+    font-size: 23px;
+    line-height: 1.45;
+  }
+}

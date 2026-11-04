@@ -1,0 +1,41 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  /* 100dvh usa a altura real visível do celular (barra do navegador já descontada). */
+  height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+/* No desktop a tela é usada por inteiro; o grid ganha colunas sozinho. */
+@media (min-width: 900px) {
+  .app {
+    max-width: none;
+  }
+}
+
+.app__content {
+  /* Container de consulta: o grid (e as unidades cqw) mede a largura
+     disponível aqui, e não a da janela. */
+  container-type: inline-size;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.app__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app__content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
