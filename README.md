@@ -1,5 +1,15 @@
 # SeteVidas — Interface principal v1.1.0
 
+**App no ar:** https://diegoafmotta2006.github.io/SeteVidas/
+
+Publicado automaticamente pelo GitHub Pages a cada `push` na branch `main`
+(workflow em `.github/workflows/deploy.yml`). Por ser HTTPS, o app pode ser
+instalado na tela inicial do celular.
+
+> ⚠️ **Privacidade:** o repositório é público e as mídias ficam acessíveis por
+> link direto (`.../midias/1.jpg`). A senha `777` protege apenas a interface,
+> não os arquivos. Não divulgue o endereço do site nem do repositório.
+
 PWA privado (React + TypeScript + Vite) com:
 
 - **tela de início** branca, com apenas o gato preto centralizado;

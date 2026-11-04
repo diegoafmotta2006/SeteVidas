@@ -131,8 +131,12 @@ Sem busca, sem abas, sem menu inferior, sem botão de adicionar mídia.
    essa a data/hora oficial.
 2. **Fuso horário** — a data é lida no fuso do aparelho. Se os dois celulares
    estiverem em fusos diferentes, a contagem pode variar em horas.
-3. **Publicação** — o PWA só pode ser instalado em `https` (ou `localhost`).
-   Falta escolher a hospedagem.
+3. **Publicação** — ✅ resolvido em 04/11/2026: app no ar em
+   https://diegoafmotta2006.github.io/SeteVidas/ (GitHub Pages, deploy
+   automático por GitHub Actions a cada push na `main`).
+4. **Privacidade** — o repositório é público, então as mídias podem ser
+   abertas por link direto. A senha `777` não protege os arquivos. Se isso
+   virar problema, migrar para hospedagem privada ou tornar o repo privado.
 4. **Aparência final** — cores, tipografia e espaçamentos serão ajustados com
    as referências visuais definitivas do proprietário.
 5. **Vídeos** — o card mostra o primeiro quadro com selo de duração; tocar
@@ -173,3 +177,4 @@ src/lib/...               → cálculos, formatação e download
 public/                   → manifest, service worker e ícones
 demo-tela-inicio.mp4      → vídeo com o fluxo completo
 ```
+| 04/11/2026 | **Publicado**: site no ar no GitHub Pages (`diegoafmotta2006.github.io/SeteVidas`) via GitHub Actions; histórico do Git reescrito para remover as versões antigas das mídias |
