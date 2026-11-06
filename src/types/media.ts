@@ -17,6 +17,11 @@ export interface MediaItem {
   fileName: string;
   /** Duração no formato mm:ss — obrigatória apenas para vídeos. */
   duration?: string;
+  /**
+   * Imagem de capa do vídeo (primeiro quadro).
+   * Sem ela, o iOS/Safari não desenha nada no card até o vídeo tocar.
+   */
+  poster?: string;
   /** Descrição para leitores de tela. */
   alt: string;
 }

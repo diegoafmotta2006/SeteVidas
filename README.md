@@ -1,4 +1,4 @@
-# SeteVidas — Interface principal v1.1.0
+# SeteVidas - Interface principal v1.1.1
 
 **App no ar:** https://diegoafmotta2006.github.io/SeteVidas/
 
@@ -21,7 +21,7 @@ PWA privado (React + TypeScript + Vite) com:
 - toque na mídia abre em tela cheia na proporção original, sobre fundo transparente e embaçado;
 - menu de três pontinhos em cada mídia, com a opção **Baixar** (não existe excluir);
 - carta de amor no final da galeria (texto em `src/data/letter.ts`);
-- rodapé com a versão (`v1.1.0`);
+- rodapé com a versão (`v1.1.1`);
 - tema escuro fixo;
 - estrutura de PWA: manifest, ícones e service worker.
 
@@ -131,7 +131,7 @@ SeteVidas/
 │  │  ├─ MediaViewer/          Mídia em tela cheia (proporção original)
 │  │  ├─ MediaMenu/            Bottom sheet com a opção "Baixar"
 │  │  ├─ LoveLetter/           Carta exibida no final da galeria
-│  │  └─ VersionFooter/        "v1.1.0" no canto inferior esquerdo
+│  │  └─ VersionFooter/        "v1.1.1" no canto inferior esquerdo
 │  ├─ data/
 │  │  ├─ media.ts              Lista de mídias (adicionada pelo administrador)
 │  │  └─ letter.ts             Texto da carta, um parágrafo por item
@@ -243,7 +243,9 @@ em vídeo (abertura, senha errada, apagar e desbloqueio).
 ```
 
 Para vídeo, use `kind: 'video'` e informe `duration: '00:42'` — esse valor vira
-o selo no canto do card.
+o selo no canto do card. Informe também `poster`, a imagem de capa extraída do
+primeiro quadro do vídeo (ex.: `'./midias/posters/42.jpg'`). No iPhone, o Safari
+não desenha o primeiro quadro sozinho: sem `poster`, o card fica preto.
 
 A lista atual tem **69 itens** (57 fotos e 12 vídeos, de `1.jpg` a `54.jfif`),
 na ordem em que aparecem no grid. As descrições (`alt`) estão genéricas
@@ -255,7 +257,7 @@ na ordem em que aparecem no grid. As descrições (`alt`) estão genéricas
 > Um caminho errado aparece como card quebrado.
 
 Ao trocar ou adicionar mídias, **suba a versão do cache** em `public/sw.js`
-(`CACHE_NAME`, hoje `setevidas-v6`). O service worker usa cache-primeiro: sem
+(`CACHE_NAME`, hoje `setevidas-v7`). O service worker usa cache-primeiro: sem
 trocar esse nome, quem já instalou o app continua vendo as mídias antigas.
 
 Enquanto a lista estiver vazia, o app mostra o estado vazio (cards cinza).
@@ -295,7 +297,7 @@ Onde as duas se contradiziam, **a especificação escrita teve prioridade**:
 | Menu de três pontinhos | "Baixar" e "Excluir" | **Somente "Baixar"** (sem função de excluir) |
 | Layout do grid | 3 colunas, cards 1x1, 1x2 e 2x1 | **Alterado em 04/11/2026**: cada card usa a proporção natural da foto (sem recorte) |
 | Cabeçalho | Contador centralizado, 2 linhas | **Replicado** |
-| Rodapé | `v1.1.0` no canto inferior esquerdo | **Replicado** |
+| Rodapé | `v1.1.1` no canto inferior esquerdo | **Replicado** |
 | Cores | Fundo e cards brancos, texto `#111111` | **Tema escuro** (fundo `#0b0b0d`, texto `#f4f4f5`) — pedido posterior do proprietário |
 | Tela de senha | — | **Tela de início + senha numérica local** em 02/11/2026: gato branco/preto na abertura e senha única `777`, sem usuário nem backend |
 | Carta | — | **Adicionada** no final da galeria, texto isolado em `src/data/letter.ts` |

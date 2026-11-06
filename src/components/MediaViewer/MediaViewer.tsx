@@ -89,6 +89,7 @@ export function MediaViewer({ item, onClose }: MediaViewerProps) {
           <video
             className="media-viewer__media"
             src={item.src}
+            poster={item.poster}
             aria-label={item.alt}
             controls
             autoPlay

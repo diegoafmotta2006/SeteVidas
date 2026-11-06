@@ -83,6 +83,7 @@ export function MediaCard({ item, colSpan, rowSpan }: MediaCardProps) {
           <video
             className="media-card__media"
             src={item.src}
+            poster={item.poster}
             aria-label={item.alt}
             preload="metadata"
             muted
