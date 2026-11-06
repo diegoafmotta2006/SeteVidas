@@ -1,7 +1,7 @@
 {
   "name": "setevidas",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "description": "SeteVidas - PWA privado com contador de tempo e galeria de memórias",
   "scripts": {

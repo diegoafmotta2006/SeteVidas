@@ -4,7 +4,7 @@
    funcionar mesmo sem internet.
    ============================================================ */
 
-const CACHE_NAME = 'setevidas-v7';
+const CACHE_NAME = 'setevidas-v8';
 
 const PRECACHE_URLS = [
   './',

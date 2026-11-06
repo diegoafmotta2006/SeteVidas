@@ -5,8 +5,8 @@
 > arquivo primeiro: ele conta o que já foi feito, o que foi decidido e qual é o
 > próximo passo. Atualize a data no topo sempre que mexer nele.
 
-**Última atualização:** 05/11/2026
-**Versão da interface:** v1.1.1
+**Última atualização:** 06/11/2026
+**Versão da interface:** v1.1.2
 **Etapa atual:** 3 — galeria com mídias reais (concluída)
 
 ---
@@ -33,6 +33,7 @@
 | 04/11/2026 | **Galeria ampliada**: 69 mídias reais (57 fotos + 12 vídeos), com duração dos vídeos extraída do próprio MP4; corrigido o item 46, que apontava para `46.jfif` (arquivo inexistente) e agora usa `46.jpg` |
 | 04/11/2026 | **Cache do service worker** para `setevidas-v6`, para que as mídias novas não fiquem presas no cache antigo |
 | 05/11/2026 | **Capas dos vídeos no iPhone**: o Safari iOS não desenha o primeiro quadro de um `<video>` só com `preload="metadata"`, então os cards de vídeo ficavam pretos. Foram gerados posters (primeiro quadro) em `public/midias/posters/`, o tipo `MediaItem` ganhou `poster?`, e `MediaCard`/`MediaViewer` passaram a usar `poster`. Cache do service worker para `setevidas-v7` |
+| 06/11/2026 | **Vídeos girados corrigidos**: os arquivos `13.mp4` (= `37.mp4`), `21.mp4`, `32.mp4` e `36.mp4` (= `44.mp4`) tinham a imagem deitada dentro do próprio MP4 (sem metadado de rotação). Foi adicionada rotação de 90° anti-horário direto na faixa de vídeo (`-display_rotation 90 -c copy`, sem reencodar, sem perder qualidade nem aumentar o arquivo), os posters foram regerados na orientação certa e o cache do service worker foi para `setevidas-v8` |
 
 ---
 
@@ -52,7 +53,7 @@ A tela principal tem:
 2. um grid de fotos e vídeos (estilo bento/Pinterest) com **69 mídias reais**
    (57 fotos e 12 vídeos);
 3. o menu de três pontinhos em cada mídia, com a opção **Baixar**;
-4. a versão (`v1.1.1`) no rodapé.
+4. a versão (`v1.1.2`) no rodapé.
 
 Sem busca, sem abas, sem menu inferior, sem botão de adicionar mídia.
 

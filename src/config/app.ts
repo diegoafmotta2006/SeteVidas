@@ -2,7 +2,7 @@
 export const APP_NAME = 'SeteVidas';
 
 /** Versão mostrada no rodapé da tela inicial. */
-export const APP_VERSION = 'v1.1.1';
+export const APP_VERSION = 'v1.1.2';
 
 /**
  * Senha única da tela de bloqueio.
